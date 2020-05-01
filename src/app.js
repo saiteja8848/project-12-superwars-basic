@@ -30,7 +30,7 @@ const initPlayers = (players) => {
         if (i % 2 == 0) {
             var obj = {
                 name: players[i],
-                strength: 100,
+                strength: getRandomStrength(),
                 image: "./images/super-" + (i + 1) + ".png",
                 type: "hero"
             };
@@ -40,7 +40,7 @@ const initPlayers = (players) => {
             var obj = {
 
                 name: players[i],
-                strength: 100,
+                strength: getRandomStrength(),
                 image: "./images/super-" + (i + 1) + ".png",
                 type: "villain"
             };
@@ -56,7 +56,7 @@ const initPlayers = (players) => {
 const getRandomStrength = () => {
     // Return a random integer (0,100]
     // Note: You can use Math.random() and Math.ceil()
-    return Math.random(1, 100);
+  return Math.floor(Math.random() * 100) + 1;
 }
 
 const buildPlayers = (players, type) => {
